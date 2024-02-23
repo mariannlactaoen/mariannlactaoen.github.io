@@ -59,7 +59,7 @@
 
     <table>
         <td>
-            <video height="200" style="border:3px solid white; "autoplay muted loop controls>
+            <video height="200" style="border:3px solid white;" autoplay muted loop controls>
                 <source src="https://github.com/mariannlactaoen/mariannlactaoen.github.io/raw/main/Swanta.mp4" type="video/mp4">
             </video>
         </td>
@@ -135,10 +135,28 @@
         <br>altering video controls (autoplay, mute, loop) and inputting image captions. 
  
     </p></i>
-    <img src="https://github.com/mariannlactaoen/mariannlactaoen.github.io/blob/main/DSCN7243.JPG?raw=true" alt=donk height="300">
+    <table>
+        <td>
+            <img src="https://github.com/mariannlactaoen/mariannlactaoen.github.io/blob/main/DSCN7243.JPG?raw=true" alt=donk height="300">
+        </td>
+        <td>        
+        <body>
+        <img id="cat-image" src="" alt="Cat Image" height="300">
+    
+        <script>
+            fetch('https://api.thecatapi.com/v1/images/search')
+                .then(response => response.json())
+                .then(data => {
+                    const catImage = data[0].url;
+                    document.getElementById('cat-image').src = catImage;
+                })
+                .catch(error => {
+                    console.error('Error:', error); 
+                });
+        </script></td>
 </body>
+</table>
 
-</center>
 </iframe>
 </html>
 
